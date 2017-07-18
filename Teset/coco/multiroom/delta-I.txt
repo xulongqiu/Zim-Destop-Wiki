@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-07-11T10:58:33+08:00
+
+====== delta-I ======
+Created 星期二 11 七月 2017
+**multiroom master:**
+1.
+adb push ~/Music/CloudMusic/chengdu.mp3 /rsystem/
+root@delta:/ # mkdir -p  [[/mnt/asec/goer_aec]]
+root@delta:/ # chmod 777 [[/mnt/asec/goer_aec]]
+
+
+root@delta:/ # testdeltamultiroom
+group1,file://mnt/asec/goer_aec/master.goer,master
+
+root@delta:/ # testdeltaplayer /rsystem/chengdu.mp3
+
+**multiroom client:**
+
+root@delta:/ # setprop media.syncplayer.driectplayback 1
+
+
+root@delta:/ # testdeltamultiroom
+group1,file://mnt/asec/goer_aec/master.goer,normal
+group1,file://mnt/asec/goer_aec/master.goer,client
+
+
+other
