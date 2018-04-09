@@ -1,0 +1,60 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-11-27T15:05:29+08:00
+
+====== 20171127W ======
+Created 星期一 27 十一月 2017
+maybe p0.06(gpio3_b3) input error or p0.05(gpio3_b4) output error(ok)
+maybe p0.04(gpio0_d2) input error or p0.03(gpio0_d3) output error(ok)
+maybe p1.30(gpio0_a2) input error or p1.29(gpio0_a3) output error
+maybe p1.28(gpio0_a6) input error or p1.27(gpio0_a7) output error(ok)
+maybe p1.16(gpio1_b7) input error or p1.15(gpio1_c0) output error
+Res: 0003E4EF
+Fail
+B output 1, A input fail
+maybe p0.34(gpio3_c7) input error or p0.33(gpio1_b3) output error
+maybe p1.33(gpio0_a1) input error or p1.32(gpio0_a0) output error(ok)
+maybe p1.20(gpio1_c5) input error or p1.19(gpio1_c4) output error
+Res: C9DE0440
+Fail
+B output 0, A input fail
+maybe p0.05(gpio3_b4) input error or p0.06(gpio3_b3) output error(ok)
+maybe p0.03(gpio0_d3) input error or p0.04(gpio0_d2) output error(ok)
+maybe p1.29(gpio0_a3) input error or p1.30(gpio0_a2) output error(ok)
+maybe p1.27(gpio0_a7) input error or p1.28(gpio0_a6) output error(ok)
+maybe p1.15(gpio1_c0) input error or p1.16(gpio1_b7) output error
+
+Res: 0003E4EF
+Fail
+A output 1, B input fail
+
+maybe p1.32(gpio0_a0) input error or p1.33(gpio0_a1) output error(ok)
+maybe p1.19(gpio1_c4) input error or p1.20(gpio1_c5) output error
+
+Res: C9DE0440
+Fail
+A output 0, B input fail
+
+
+rkboot # gpiofactorytest                                                                            
+maybe p1.16(gpio1_b7) input error or p1.15(gpio1_c0) output error    (os ok)                               
+Res: 00003FEF                                                                                       
+Fail                                                                                                
+B output 1, A input fail                                                                            
+maybe p0.34(gpio3_c7) input error or p0.33(gpio1_b3) output error       (os ok)                            
+maybe p1.20(gpio1_c5) input error or p1.19(gpio1_c4) output error (os fail)                                  
+Res: 00002040                                                                                       
+Fail                                                                                                
+B output 0, A input fail                                                                            
+maybe p1.15(gpio1_c0) input error or p1.16(gpio1_b7) output error          (os ok)                         
+                                                                                                    
+Res: 00003FEF                                                                                       
+Fail                                                                                                
+A output 1, B input fail                                                                            
+maybe p1.19(gpio1_c4) input error or p1.20(gpio1_c5) output error                                   
+maybe p1.17(gpio1_c2) input error or p1.18(gpio1_c3) output error           (os ok)                      
+                                                                                                    
+Res: 00000060                                                                                       
+Fail                                                                                                
+A output 0, B input fail                                                                            
+Pass            

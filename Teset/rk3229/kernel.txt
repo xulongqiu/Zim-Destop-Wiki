@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-10T14:02:19+08:00
+
+====== kernel ======
+Created 星期二 10 十月 2017
+* cpu temperature
+	cat /sys/class/hwmon/hwmon0/device/temp0_input
+* other
+* other
+* audio
+	录音：audio_test /mnt/asec/pcm_out.wav -D 0 -d 1 -C -p 512 -r 16000 -f 16 -c 8 -n 8
+	放音：audio_test /data/test_signal_fr.wav -D 0 -d 0 -P -p 4096 -r 48000 -f 16 -c 2 -n 6
+	
+

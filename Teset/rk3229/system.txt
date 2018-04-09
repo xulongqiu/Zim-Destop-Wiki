@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-22T10:52:36+08:00
+
+====== system ======
+Created 星期五 22 十二月 2017
+Wlan 
+1.修改config文件
+路径：
+/data/misc/wifi/wlm.conf
+
+添加
+initial.setup.mode = 0
+
+2.连接wifi：
+bcm4359.sh -c ssid password
+password 等于密码，如果没有密码，password等于open
+

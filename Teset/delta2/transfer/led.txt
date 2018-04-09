@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-09-11T14:50:42+08:00
+
+====== led ======
+Created 星期一 11 九月 2017
+led 是使用i2c扩展gpio芯片aw9110和aw2013来驱动的，其中两片aw9110来驱动触摸板上的led， 一颗aw2013用来显示充电/电池电量信息
+linux: led-ui分成三步分设计: driver,  libled, ledpatterns
+
+1. driver
+code: common/drivers/input/misc/aw9110_led/    aw9110_1.c  aw9110_2.c  aw2013.c
+1). 注册成misc， 杂项字符设备；
+2).  驱动只提供简单的read/write/ioctl函数， 供libled调用，不区分具体的寄存器功能；
+3). 在mcu服务启动接管之前，负责led的ui显示，比如开机ui ；
+4). 与uboot ledUI的衔接，通过uboot env传递， __setup()的回调函数解析uboot env.
+
+2. libled
+code: vendor/libratone/common/virtualmcu/mcu_code/source/led/lib_drv/aw9110_lib.cpp
+打开/dev/aw9110_1_dev   [[/dev/aw9110_2_dev]]  设备， 根据硬件手册对硬件进行控制，为ledpatters提供统一的api。
+
+3. ledpatterns
+具体的UI.
+
+
+uboot:
+uboot 负责开机UI的前半部分: 鸟灯闪烁
+code:  

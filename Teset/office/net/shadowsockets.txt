@@ -4,5 +4,10 @@ Creation-Date: 2017-07-18T11:44:40+08:00
 
 ====== shadowsockets ======
 Created 星期二 18 七月 2017
-
+1. 翻墙
 [[./shadowsockets.sh]] 
+
+2. 系统代理
+[[./httpproxy.sh]] 
+
+4. other

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-21T20:41:11+08:00
+
+====== adb ======
+Created 星期四 21 十二月 2017
+#开启网络adb
+setprop service.adb.tcp.port 5555
+
+setprop persist.adb.trace_mask   ffff

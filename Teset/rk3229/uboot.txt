@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-10T15:19:17+08:00
+
+====== uboot ======
+Created 星期二 10 十月 2017
+* start sequence log
+[[./rk3229-startup.log]] 
+* callback sequence
+	arc/arm/lib/vectors.S ::_start   ->  arc/arm/cpu/armv7/start.S::reset  -> arch/arm/lib/crt0.S::_main  ->
+	common/board_f.c::board_init_f()
+* env
+	board/rockchip/common/mediaboot/sdmmcBoot.c  
+	board/rockchip/common/storage/storage.c 
+	SD_CARD_FW_PART_OFFSET   8192
+	uboot env offset: SD_CARD_SYS_PART_OFFSET(8064) + UBOOT_SYS_DATA_OFFSET(64) = 8128
+		   uboot env size: CONFIG_ENV_SIZE  0x2000  < (64 * 0.5) = 32K
+
+* other

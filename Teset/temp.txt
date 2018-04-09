@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-08T19:53:31+08:00
+
+====== temp ======
+Created 星期一 08 一月 2018
+
+io -4 -w  0x1100013c 0x0030aa64
+io -4 -r  0x11140050
+
+io -4 -w 0x11000114 0x00036513
+http://blog.csdn.net/loushuai/article/details/45565951
+
+
+/system/bin/ota.sh[49]: dirname: not found                                                                                                                              
+mkdir [OPTION] <target>                                                                                                                                                 
+	--help           display usage and exit                                                                                                                             
+	-p, --parents    create parent directories as needed                                                                                                                
+/system/bin/ota.sh[54]: can't create /cache/recovery/command: No such file or directory 
+
+
+播放音乐
+04-02 02:57:33.180 V/MediaPolicyService(  149): processPolicy 0xb76cf1d8, msg 5, ext1 45, ext2 0
+04-02 02:57:33.184 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 2, ext2 0
+
+04-02 02:57:37.328 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 1, ext2 0
+04-02 02:57:37.348 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 3, ext2 0
+04-02 02:57:37.349 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 5, ext1 40, ext2 1015
+04-02 02:57:38.101 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 5, ext1 40, ext2 1015
+04-02 02:57:38.113 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 3, ext2 0
+04-02 02:57:38.125 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 0, ext2 0
+04-02 02:57:43.786 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 1, ext2 0
+04-02 02:57:44.150 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 3, ext2 0
+04-02 02:57:44.417 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 0, ext2 0
+
+
+播放新闻
+04-02 02:57:47.584 V/MediaPolicyService(  149): processPolicy 0xb76cf1d8, msg 5, ext1 45, ext2 0
+04-02 02:57:47.587 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 2, ext2 0
+
+04-02 02:57:51.244 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 1, ext2 0
+04-02 02:57:51.258 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 3, ext2 0
+04-02 02:57:51.260 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 5, ext1 40, ext2 1015
+04-02 02:57:51.595 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 5, ext1 40, ext2 1015
+04-02 02:57:51.597 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 3, ext2 0
+04-02 02:57:51.599 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 0, ext2 0
+04-02 02:57:54.746 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 1, ext2 0
+04-02 02:57:55.079 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 3, ext2 0
+04-02 02:57:55.186 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 0, ext2 0
+
+
+播放音乐
+04-02 02:58:01.787 V/MediaPolicyService(  149): processPolicy 0xb76cf1d8, msg 5, ext1 45, ext2 0
+04-02 02:58:01.791 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 2, ext2 0
+
+04-02 02:58:05.900 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 1, ext2 0
+04-02 02:58:05.911 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 3, ext2 0
+04-02 02:58:05.913 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 5, ext1 40, ext2 1015
+04-02 02:58:06.291 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 5, ext1 40, ext2 1015
+04-02 02:58:06.298 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 3, ext2 0
+04-02 02:58:06.310 V/MediaPolicyService(  149): processPolicy 0xb76cf540, msg 1, ext1 0, ext2 0

@@ -1,0 +1,84 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-29T15:24:08+08:00
+
+====== fat ======
+Created 星期一 29 一月 2018
+半成品模组：
+1. 增加蓝牙测试
+2. __第一次开机不需要进recovery，仿照A111首次启动流程__
+半成品底板：
+1. 离线烧录MUC和touch
+2. __工厂底板测试站第一站写入productname, devicemask__
+3. __ScanI2c 区分egg2和zpp3__
+4. 声学提供测试模式大功率vdsp库(derk)
+5. 确认播放一会后没有输出的问题(2pcs, tinymix ok, audio_test/fatplayer播放均没有输出)
+6. 包装站写SN，颜色代码， 退出测试，恢复出厂设置(ES2)
+
+成品：
+1. auxservice在mfgmode=1时也要开启
+2. 测试模式下默认音量最大(fat.sh 最后执行testdsp -p -5#1 -v 100)
+3. 确认通道数据不正确的问题
+
+
+
+
+工站顺序：
+模组：
+I. 烧录站(uboot)
+	1. 软件烧录
+	2. gpio test
+	3. 测试点电压测试
+	4. wifi模块上电、下电电流测试
+	5. 写bt、wifi地址
+II. 射频站(kernel)
+	1. 版本号获取
+	 2. wifi测试
+	 3. BT测试
+
+底板：
+I. 离线烧录站
+	1. MCU离线烧录
+	2. touch离线烧录
+II. 综合站
+	1. 电压测试点，电流测试
+	2. i2c设备测试
+III. 功放测试站
+	 1. 3.5 高低频测试
+	 2. tas5760 高低音测试
+
+成品：
+I. 综合站
+	1. 气密性测试
+	2. led测试(LedTest/LedTestEnd)
+	3. touch测试(TouchTest)
+	4. 扫码写中间码( SetEnvCustom key value)
+II. 射频站
+	1. 2.4G发射功率测试： wlan on;11n_ht20_tx 1 1 14
+	2. 5G发射功率测试：wlan on;11n_ht20_tx 1 36 14
+III. 声学测试站
+	0. GetEnvCustom uuid; CfgCp /storage/
+	1. TxStart;TxEnd;TxCheck;TxCp
+	2. LoopStart;LoopCheck fr; LoopCheck ncd; LoopCp /storage/egg2/es1/20180125122536_sn_0.wav
+	问题：
+	1. Q: 执行CfgCp命令失败， A：U盘是否正确识别挂载
+	2. Q: 拷贝文件没有拷贝成功 A: U盘是否正确识别挂载
+	3. Q: 命令执行失败, A: 看一下/cahce空间是否足够
+IV. LineIn
+	1. LineInTestStart
+	 问题：
+	1. Q: 音量偏小 A: 必须先执行第III站，才能执行本站
+V. 主观听音站
+	1. 3.5扫频
+	2. iap
+	问题：
+	1. Q: 3.5没有声音 A: 必须经过第IV站，用LineInTestStart 打开fatauxplayer； 如果执行了IV站还是没有声音，查看第IV站是否执行了LineInTestEnd指令，关闭了fatauxplayer。
+	2. Q:iap没有声音 A: 第三站U盘中的es1_update.sh 中需要启动iap服务
+
+VI. 包装站
+	1. SN
+	2. 颜色代码
+	3. pre_channel, dlna/airplay config...
+	4. 退出测试模式
+	5. 恢复出厂设置 
+

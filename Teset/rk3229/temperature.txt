@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-10T10:43:17+08:00
+
+====== temperature ======
+Created 星期三 10 一月 2018
+
+开始ddrnand测试：
+setprop persist.test.ddremmc.cnt 50
+ddremmctestclean.sh
+结束ddrnand测试：
+setprop persist.test.ddremmc.cnt 0
+
+开始高温测试：
+test_v4_kj.sh 1008000 120 120  [[/dev/console]]
+
+说明：
+执行test_v4_kj.sh 会打印出命令行参数：
+Usage: /system/bin/test_v4_kj.sh freq(kHz) time(secs) tempgate(*C) logfile                                                                                              
+frequency：600000 816000 1008000 1200000 1296000 1392000 1464000
+

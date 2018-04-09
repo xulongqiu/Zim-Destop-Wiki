@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-01T14:54:11+08:00
+
+====== repo ======
+Created 星期五 01 十二月 2017
+repo-local init -u gitlab@192.168.20.251:delta/manifests.git -b master
+repo-local sync

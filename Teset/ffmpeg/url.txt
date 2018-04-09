@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-31T20:38:35+08:00
+
+====== url ======
+Created 星期二 31 十月 2017
+textplain:
+https://opml.radiotime.com/Tune.ashx?serial=AHI5JIYC4XSVRHTWBSK7ZJNBUMRQ&formats=aac,mp3&id=s17339&partnerId=4JqugguZ
+
+
+File1=http://19763.live.streamtheworld.com:80/977_80_SC?DIST=TuneIn&TGT=TuneIn&ua=4JqugguZ&ttag=4JqugguZ
+File2=http://19763.live.streamtheworld.com:3690/977_80_SC?DIST=TuneIn&TGT=TuneIn&ua=4JqugguZ&ttag=4JqugguZ
+File3=http://19353.live.streamtheworld.com:80/977_80_SC?DIST=TuneIn&TGT=TuneIn&ua=4JqugguZ&ttag=4JqugguZ
+File4=http://19353.live.streamtheworld.com:3690/977_80_SC?DIST=TuneIn&TGT=TuneIn&ua=4JqugguZ&ttag=4JqugguZ
+
+
+
+https://audiblecdn-vh.akamaihd.net/i/295893/audiblewords/content/bk/bbcw/001535/V$000002$V/aax/bk_bbcw_001535_22_32.mp4/master.m3u8?start=4&end=3231&hdnea=st=1509784892~exp=1509784952~acl=/i/295893/audiblewords/content/bk/bbcw/001535/V$000002$V/aax/bk_bbcw_001535_22_32.mp4/*~data=4,3231~hmac=1e063
+https://audiblecdn-vh.akamaihd.net/i/295893/audiblewords/content/bk/bbcw/001535/V$000002$V/aax/bk_bbcw_001535_22_32.mp4/master.m3u8?start=4&end=3231&hdnea=st=1509784692~exp=1509784752~acl=/i/295893/audiblewords/content/bk/bbcw/001535/V$000002$V/aax/bk_bbcw_001535_22_32.mp4/*~data=4,3231~hmac=131f8
+https://audiblecdn-vh.akamaihd.net/i/295893/audiblewords/content/bk/bbcw/001535/V$000002$V/aax/bk_bbcw_001535_22_32.mp4/master.m3u8?start=4&end=3231&hdnea=st=1509785085~exp=1509785145~acl=/i/295893/audiblewords/content/bk/bbcw/001535/V$000002$V/aax/bk_bbcw_001535_22_32.mp4/*~data=4,3231~hmac=1be16
+
+https://audiblecdn-vh.akamaihd.net/i/295893/audiblewords/content/bk/bbcw/001535/V$000002$V/aax/bk_bbcw_001535_22_32.mp4/master.m3u8?start=4&end=3231&hdnea=st=1509785318~exp=1509785378~acl=/i/295893/audiblewords/content/bk/bbcw/001535/V$000002$V/aax/bk_bbcw_001535_22_32.mp4/*~data=4,3231~hmac=9a5b9eb6c4

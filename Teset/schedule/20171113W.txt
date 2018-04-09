@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-11-13T11:32:15+08:00
+
+====== 20171113W ======
+Created 星期一 13 十一月 2017
+1. 高低温：
+	低温 4× 1.5G  -20°C
+	散热片 4*1.5G 85°C
+	kernel header crc error: 再找4pcs做测试，4 × 600M 85°C， 如果ok， 则单独测试30号板子的DDR，没有问题的话，更换EMMC 测试跑机@4 X 600M
+2. AVS
+	bug 随机修改
+4. 功耗
+	 关闭VCCIO，非唤醒IO的电源域再行测试
+5. mtest2
+	测试前128M内的50M，看看速度, ok
+6. usb test
+	周一下午：usb 测试，进入测试模式的命令搞错了，正确进入测试模式后，可以发送test packet
+	周二下午： usb测试，眼图测试完成
+	
+7. acp
+ [   34.181340@0] goer_acp 1-0010: write 1 byte ok -->  30,82                                                                                                            
+[   34.201354@0] goer_acp 1-0010: read 2 byte -->  3,8c, 3,88, 6, 9,2a,86,48,86                                                                                         
+[   34.202830@0] goer_acp 1-0010: write 1 byte ok -->  31,8c                                                                                                            
+[   34.306197@1] goer_acp 1-0010: read 908 byte --> 30,82, 3,88, 6, 9,2a,86,48,86
+
+<6>[ 1032.657624] goer_acp 0-0010: device node major=10, minor=38                                                                                                       
+<6>[ 1032.658515] goer_acp 0-0010: write 1 byte ok -->  30,82                                                                                                           
+<3>[ 1032.659520] goer_acp 0-0010: failed to read 2 byte return -11                                                                                                     
+<6>[ 1032.665429] goer_acp 0-0010: read 2 byte -->  3,8c, 3,88, 6, 9,2a,86,48,86                                                                                        
+<6>[ 1032.665706] goer_acp 0-0010: write 1 byte ok -->  31,8c                                                                                                           
+<6>[ 1032.827510] goer_acp 0-0010: read 908 byte --> 30,82, 3,88, 6, 9,2a,86,48,86
+
+
+

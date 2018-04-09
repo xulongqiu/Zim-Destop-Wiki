@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-09-06T21:21:15+08:00
+
+====== touch ======
+Created 星期三 06 九月 2017
+新的touch firmware支持已经调试完成，切换到新的firmware需要：
+1. virtualMcu:  vendor/libratone/common/virtualmcu/mcu_code/source/touch_battery/lib_touch_drv/sepres_lib.cpp   SEPRES_EVENT_DIRECT 修改为1
+2. kernel:   common/drivers/input/misc/sepres_key/coco/ 下的文件Makefile 修改行obj-$(CONFIG_SEPRES_I2C)  += sepres-i2c.o 为obj-$(CONFIG_SEPRES_I2C)  += sepres-i2c-event.o
+3. touch_update:bootable/recovery/vendor/libratone/touchupdate/upgrade.h START_UPGRADE_ADDR  修改为0x09
+4. system.prop: device/amlogic/coco/system.prop     ro.product.firmware.revision=4  → ro.product.firmware.revision=5
+
+

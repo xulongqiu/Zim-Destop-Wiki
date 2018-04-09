@@ -1,0 +1,79 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-02-28T16:20:09+08:00
+
+====== driver work ======
+Created 星期三 28 二月 2018
+1. Touch Driver （spec/kernel/app，upgrade)
+	  touch_firmware -i2c->kernel -input subsystem-> app
+	  1.1 touch firmware: report touch event and raw touch data
+	a. spec
+	b. 升级工具，升级操作
+	c. 算法专用固件 touch_update_packet_baseline.bin
+	  1.2 kernel: read event data in timer callback and send key event to app
+	a. dts: kernel/arch/arm/boot/dts/delta2_zippmini_rk805.dts ->  touch2c
+	b. code: drivers/input/misc/sepres_key
+	c. debug sys:
+		[[/sys/class/i2c-dev/i2c-1/device/1-0037/control]]
+		sepres_debug： echo 1 500 > sepres_debug,  打开debug开关， 500ms读取一次
+						read_state: event=00, state=84, maskM=00, maskL=00, version=0c, padNum=0, BaseLineM=6f, BaseLineL=62                                                                                                                                                      
+		sepres_regs       :  cat sepres_regs 读取十个字节的数据， 产测TouchTest使用
+						00 04 **00 00** 0c 00 6f 65 00 00                                                                                                                                                      
+		sepres_test        : cat sepres_test 读取所有pad的baseline， 算法使用
+						ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00     
+	  1.3 ui_libratone:  key_event → mcu_event
+	a. 设备节点：/dev/sepres_touch， [[/dev/input/event0(sepres_touch)，]] [[/dev/input/event1(rk816_pwrkey]])
+	b. code: vendor/libratone/libratone_code/ui_libratone/touch
+	  1.4 upgrade: touch 升级程序
+	a. code: vendor/libratone/libratone_code/ota_libratone/touchpad
+	b. firmware: vendor/libratone/sdk/ota_libratone/touchpad/ZippMini_touchpad_1.1.12.bin
+	c. spec:  @bruce.yang
+	d. usage: touch_pad firmware.bin version           例如：touch_pad touch_update_packet_baseline.bin 1.1.13
+
+3. LED Driver （spec/uboot/kernel/app)
+	  aw9817-i2c-> kernel -misc_dev->app
+	  1.1 aw9817: gpio 扩展芯片
+	a. spec: DS_AW9817_CN_V1_0_I2C接口_44路动态呼吸灯控制器.pdf
+	  1.2 kernel: misc_dev
+	a. dts: kernel/arch/arm/boot/dts/delta2_zippmini_rk805.dts -> aw9817
+	b. code: kernel/drivers/input/misc/aw91xx
+	c. debug sys:  
+		[[/sys/class/i2c-dev/i2c-1/device/1-003a/control]] 
+		all             : echo enable > all        echo disable > all                                                                                                                                                        
+		light       :  echo 0 > light  点亮某一路灯                                                                                                                                                          
+		regs       :    echo 2c 0f > regs, 向寄存器2c写入0f值
+	  1.3 ui_libratone: 
+	a. 设备节点： [[/dev/aw9817_dev]]
+	b. code: vendor/libratone/libratone_code/ui_libratone/led
+	c. samples: vendor/libratone/libratone_code/ui_libratone/samples
+	  1.4 uboot: 鸟灯呼吸和二级菜单呼吸
+	a. led_sdb gpio: gpio1_b7
+	b. code: board/rockchip/zippmini/zippmini.c   cmd: ledui       birdblink
+
+4. 产线测试
+	a. 工厂测试流程
+	b. spec
+	c. code/scripts: vendor/libratone/sdk/fat
+	d. uboot: gpiofactorytest   code: u-boot/common/libratone/cmd_gpiofactorytest.c
+
+5. Battery （A111 uboot/kernel/app）
+	  1.1 uboot
+	a. board: board/amlogic/m8b_zipp_mini_v1/m8b_zipp_mini_v1.c  do_poweron
+	b. arc_core: arch/arm/cpu/aml_meson/m8b/firmware/arc_power
+	  1.2 kernel
+	a. dts:  arch/arm/boot/dts/amlogic/meson8b_zipp_mini_512M.dtd  isl9238@09  power_battery
+	b. code: common/drivers/power/libratone
+	  1.3 app: 
+	a. code: vendor/libratone/libratone_code/ui_libratone/battery
+
+6. Sleep &WakeUp (A111)
+	  spec: 
+	  code: uboot/arch/arm/cpu/aml_meson/m8b/firmware/arc_power/arc_power.c +440 struct ARC_PARAM *arc_param=ARC_PARAM_ADDR;
+			 common/arch/arm/mach-meson8b/power_suspend.c     suspend_reason → arc_core
+			 common/arch/arm/mach-meson8b/include/mach/pm.h +46
+			 common/drivers/amlogic/input/gpio_key/aml_gpiokey.c +452   arc_core -> resume_reason
+8. 温控（Kernel/脚本）
+	  code/script: device/rockchip/delta2/temperature
+	  branch: kernel:  temperature ,   device:  temperature
+
+	 deltaN 上温控策略非常简单， 只有两个温度：95/120

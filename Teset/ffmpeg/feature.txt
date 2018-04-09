@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-09-21T17:17:41+08:00
+
+====== feature ======
+Created 星期四 21 九月 2017
+现在vtuner电台播放不了的主要原因是url本身就打不开， 有些需要翻墙；
+ 因为电台所使用的网络协议和音频格式都是不确定的， 所以不太好定义具体哪些电台部支持，现在支持的特性包括：
+1. 支持的协议格式：
+	file,http,https,mmsh,mmst,tcp,udp,rtp,srtp,ftp,rtmp,rtmpt,hls(m3u8)
+2. 不支持的Mime类型
+	x-mpegurl， x-ms-wax， x-ms-wma，x-scpls， x-pls， x-pn-realaudio

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-07-27T18:04:02+08:00
+
+====== hardware ======
+Created 星期四 27 七月 2017
+1. ddr
+[[uboot: branch]] remotes/origin/coco_ddr_2x128m
+common: branch remotes/origin/coco_ddr_2x128m
+
+2. nand
+uboot: branch remotes/origin/2x128ddr_256nand
+device: branch remotes/origin/and256m
+hardware: branch remotes/origin/nand256m
